@@ -1,0 +1,6 @@
+int a;
+float s;
+double d;
+a = (d * 7) + (s + d);
+
+
