@@ -56,6 +56,7 @@ class Parser:
             self.parse_if()
         elif t.type == 'KEYWORD' and t.value == 'while':
             self.parse_while()
+        
         elif t.type == 'DELIM' and t.value == ';':
             self.advance()
         else:

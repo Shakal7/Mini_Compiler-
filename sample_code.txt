@@ -1,6 +1,11 @@
-int a;
-float s;
-double d;
-a = (d * 7) + (s + d);
+int s,d,p,x;
 
+float a;
+
+double b;
+
+ x=a+p;
+ s = (7*b) + (x+10);
+
+ 
 
