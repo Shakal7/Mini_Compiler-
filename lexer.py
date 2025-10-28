@@ -3,7 +3,7 @@
 
 import re
 
-KEYWORDS = {'int','float','double','char','if','else','while','print','return'}
+KEYWORDS = {'int','float','double', 'for', 'string', 'char','if','else','while','print','return'}
 OPS = {'+', '-', '*', '/', '=', '==','!=','<','>','<=','>='}
 DELIMS = {';', ',', '(', ')', '{', '}'}
 
@@ -61,7 +61,7 @@ def lexer(code):
             elif typ == 'DELIM':
                 tok_type = 'DELIM'
             elif typ == 'NUMBER':
-                tok_type = 'NUMBER'
+                tok_type = 'NUMBER'    
             elif typ == 'CHAR':
                 tok_type = 'CHAR'
             else:
@@ -72,3 +72,14 @@ def lexer(code):
         mo = _get_token(code, pos)
     tokens.append(Token('EOF','',line,col))
     return tokens
+
+
+if __name__ == "__main__":
+    print("=== SIMPLE LEXICAL ANALYZER ===")
+    filename = input("Enter source filename: ").strip()
+    with open(filename, 'r') as f:
+        src = f.read()
+    toks = lexer(src)
+    print("\n=== TOKENS ===")
+    for t in toks:
+        print(t)
